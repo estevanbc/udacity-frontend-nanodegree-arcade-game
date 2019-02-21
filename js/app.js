@@ -128,9 +128,7 @@ class Enemy extends Character {
 
         if (!this.isValidMovement(this.x, this.y)) {
             this.resetPosition();
-        }
-
-        this.checkCollision();        
+        }    
     }    
 
     // random the position between the enemy's movement bounds
@@ -144,7 +142,7 @@ class Enemy extends Character {
     }
 
     // checks the enemy collided with the player
-    checkCollision() {
+    checkCollision(player) {
         if (player) {
             if ((this.x + this.offset.x) < ((player.x + player.offset.x) + player.size.width) &&
                 ((this.x + this.offset.x) + this.size.width) > (player.x + player.offset.x) &&
